@@ -1,0 +1,20 @@
+{
+	"$schema": "http://www.lavishsoft.com/schema/agent.json",
+	"name": "Minimap Array",
+	"platforms": {
+		"joe multiboxer session": {
+			"eventHandlers": {
+				"onAgentStartup": {
+					"code": [
+						"run MinimapArray.Session.iss"
+					]
+				},
+				"onAgentShutdown": {
+					"code": [
+						"endscript MinimapArray.Session"
+					]
+				}
+			}
+		}		
+	}
+}

@@ -1,0 +1,65 @@
+{
+    "$schema": "http://www.lavishsoft.com/schema/lgui2Package.json",
+    "templates": {
+        "minimaparray.source": {
+            "type": "videofeedsource",
+            "horizontalAlignment":"right",
+            "verticalaAlignment":"top",
+            "width": 180,
+            "height": 180
+        },
+        "minimaparray.viewer":{
+            "type":"videofeed",
+            "width":180,
+            "height":180,
+            "acceptsKeyboardFocus":false,
+            "acceptsMouseFocus":false
+        }
+    },
+    "elements": [
+        {
+            "type": "window",
+            "name": "minimaparray.view",
+            "title":"Minimap Array",
+            "visibility": "visible",
+            "acceptsKeyboardFocus":false,
+            "content": {
+                "type": "dockpanel",
+                "children": [
+                    {
+                        "_dock":"top",
+                        "name":"minimaparray.viewerpanel",
+                        "type":"stackpanel",
+                        "orientation":"horizontal"
+                    },                    
+                    {
+                        "_dock":"bottom",
+                        "type":"button",
+                        "visibility":"collapsed",
+                        "content":"Show Console",
+                        "margin":[5,5,5,0],
+                        "eventHandlers":{
+                            "onPress":{
+                                "type":"code",
+                                "code":"LGUI2.Element[consoleWindow]:SetVisibility[Visible]"
+                            }
+                        }
+                    },
+                    {
+                        "_dock":"bottom",
+                        "type":"button",
+                        "visibility":"collapsed",
+                        "content":"Reload Minimap Array",
+                        "margin":[5,5,5,0],
+                        "eventHandlers":{
+                            "onPress":{
+                                "type":"code",
+                                "code":"JMB.Agent[Minimap Array]:Stop:Start"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
